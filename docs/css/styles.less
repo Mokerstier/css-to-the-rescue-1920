@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  header{
+      transform: translateY(-100%);
+      transition: all 3s ease;
+  }
+  main {
+    transform: translateY(-2em);
+    transition: all 3s ease;
+
+    input:checked +  section > section:nth-child(2) > div{
+        animation: moveTrain 3s 3;
+     } 
+    section:nth-child(2) {
+    width: 400vw;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+        section:nth-child(2){
+    
+            div{
+            transition: all 2s;
+            transform: translateX(0);
+            
+            }  
+            @keyframes moveTrain{
+             0%{
+                 transform: translateX(0);
+             }
+             50%{
+                 transform: translateX(200px);
+             }
+             100%{
+                 transform: translateX(0);
+             }
+            }
+        }
+        section:nth-child(3) {
+            div{
+                background-color: rgb(80, 50, 50);
+                height: 2em;
+                width: 90vw;
+            }
+        } 
+    }
+  
+}
