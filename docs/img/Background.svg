@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4691" height="386" viewBox="0 0 4691 386">
+  <defs>
+    <linearGradient id="background-a" x1="8.428%" x2="26.861%" y1="50.445%" y2="49.505%">
+      <stop offset="0%" stop-color="#3E3C3C" stop-opacity="0"/>
+      <stop offset="51.409%" stop-color="#312F2F" stop-opacity=".364"/>
+      <stop offset="100%" stop-opacity=".509"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(1 1)">
+    <g stroke="#979797">
+      <rect width="46" height="384" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="46" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="92" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="138" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="184" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="230" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="276" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="322" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="368" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="414" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="460" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="506" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="552" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="598" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="644" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="690" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="736" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="782" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="828" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="874" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="920" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="966" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="1012" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="1058" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="1104" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="1150" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="1196" fill="#ECE9E9"/>
+      <rect width="46" height="384" x="1242" fill="#ECE9E9"/>
+      <line x2="1288" y1="32" y2="32"/>
+      <line x2="1288" y1="62" y2="62"/>
+      <line x2="1288" y1="92" y2="92"/>
+      <line x2="1288" y1="122" y2="122"/>
+      <line x2="1288" y1="152" y2="152"/>
+      <line x2="1288" y1="182" y2="182"/>
+      <line x2="1288" y1="212" y2="212"/>
+      <line x2="1288" y1="242" y2="242"/>
+      <line x2="1288" y1="272" y2="272"/>
+      <line x2="1288" y1="302" y2="302"/>
+      <line x2="1288" y1="332" y2="332"/>
+      <line x2="1288" y1="362" y2="362"/>
+    </g>
+    <polygon fill="#1D1C1C" points="207 219 253 219 253 253 286 253 299 307 339 307 391 323.5 437 323.5 483 323.5 529 307 536 253 575 253 575 216 612 216 621 146 575 125 529 93 507 74 449 61 362 61 313 61 299 93 253 93 253 128 207 125 184 162.5 158 162.5 158 192 184 216"/>
+    <rect width="322" height="30" x="782" y="92" fill="#6E0303" stroke="#979797"/>
+    <g fill="#FFF" transform="translate(788 94)">
+      <rect width="9" height="26"/>
+      <rect width="9" height="23" x="7" y="10" transform="rotate(90 11.5 21.5)"/>
+      <rect width="9" height="23" x="7" y="-7" transform="rotate(90 11.5 4.5)"/>
+    </g>
+    <polygon fill="url(#background-a)" points="0 0 4690 0 4690 384 1785.5 384 1541 384 1265 384 998 384 874 384 391 384 286 384 69 384 0 384"/>
+  </g>
+</svg>

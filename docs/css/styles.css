@@ -10,32 +10,107 @@ main {
   transform: translateY(-2em);
   transition: all 3s ease;
 }
-main input:checked + section > section:nth-child(2) > div {
-  animation: moveTrain 3s 3;
+main input:checked + section > section:first-of-type > div {
+  transform: translateX(-120vw);
+  animation: moveBackground 5s;
 }
-main section:nth-child(2) {
+main input:checked + section > section:nth-child(2) > div {
+  animation: moveTrain 6s;
+}
+main input:checked + section > section:nth-child(2) > div img {
+  animation: bump 0.2s 12 3s;
+}
+main input:checked + section > section:nth-child(3) > div {
+  transform: translateX(-120vw);
+  animation: movePlatform 5s;
+}
+main section:nth-of-type(2) {
   width: 400vw;
   height: 80vh;
   overflow: hidden;
   display: flex;
+  align-items: flex-end;
 }
-main section:nth-child(2) section:nth-child(2) div {
+main section:nth-of-type(2) section:first-of-type {
+  align-items: flex-start;
+  position: absolute;
+  height: 50vh;
+  display: flex;
+}
+main section:nth-of-type(2) section:first-of-type div:nth-of-type(2) img {
+  margin: auto;
+}
+main section:nth-of-type(2) section:nth-of-type(2) div {
+  margin-bottom: 3em;
   transition: all 2s;
   transform: translateX(0);
+}
+@keyframes moveBackground {
+  from {
+    transform: translateX(0vw);
+  }
+  to {
+    transform: translateX(-120vw);
+  }
+}
+@keyframes bump {
+  from {
+    transform: translateY(-1px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 @keyframes moveTrain {
   0% {
     transform: translateX(0);
+    transform: skewY(2deg);
   }
-  50% {
+  20% {
     transform: translateX(200px);
   }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(200px);
+  }
+  80% {
+    transform: translateX(80px);
+    transform: skewY(-2deg);
+  }
+  90% {
+    transform: translateX(20px);
+    transform: skewY(-0.1deg);
+  }
   100% {
-    transform: translateX(0);
+    transform: translateX(10px);
   }
 }
-main section:nth-child(2) section:nth-child(3) div {
-  background-color: #503232;
-  height: 2em;
+main section:nth-of-type(2) section:nth-of-type(3) {
+  position: absolute;
+  left: 0;
+  top: 80vh;
+}
+@keyframes movePlatform {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-120vw);
+  }
+}
+main section:nth-of-type(2) section:nth-of-type(3) div {
   width: 90vw;
+}
+main section:nth-of-type(2) section:nth-of-type(3) div:first-of-type {
+  transition: all 3s;
+  background-color: #9ba8b1;
+  height: 2em;
+  -webkit-clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+}
+main section:nth-of-type(2) section:nth-of-type(3) div:nth-of-type(2) {
+  background-color: #503232;
+  height: 4em;
 }
