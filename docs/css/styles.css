@@ -8,7 +8,6 @@ header {
 }
 main {
   transform: translateY(-2em);
-  transition: all 3s ease;
 }
 main input:checked + section > section:first-of-type > div {
   transform: translateX(-120vw);
@@ -17,7 +16,7 @@ main input:checked + section > section:first-of-type > div {
 main input:checked + section > section:nth-child(2) > div {
   animation: moveTrain 6s;
 }
-main input:checked + section > section:nth-child(2) > div img {
+main input:checked + section > section:nth-child(2) > div svg {
   animation: bump 0.2s 12 3s;
 }
 main input:checked + section > section:nth-child(3) > div {
@@ -37,10 +36,94 @@ main section:nth-of-type(2) section:first-of-type {
   height: 50vh;
   display: flex;
 }
+main section:nth-of-type(2) section:first-of-type aside {
+  background: linear-gradient(45deg, #00B1F5, rgba(0, 0, 0, 0));
+  cursor: url(../img/spraycan-tilt.svg) 2 2, auto;
+  height: 118px;
+  position: absolute;
+  width: 145px;
+  -webkit-mask-image: url(../img/CSSTOTHERESCUE.svg);
+          mask-image: url(../img/CSSTOTHERESCUE.svg);
+}
+main section:nth-of-type(2) section:first-of-type aside:hover {
+  animation: fill 3s;
+}
+@keyframes fill {
+  from {
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0));
+  }
+  to {
+    backgrounde: linear-gradient(45deg, #00B1F5);
+  }
+}
+main section:nth-of-type(2) section:first-of-type div:nth-of-type(2):hover {
+  animation: wiggle 3s infinite;
+}
+main section:nth-of-type(2) section:first-of-type div:nth-of-type(2):hover img:nth-of-type(2) {
+  animation: blink 0.2s infinite 0.3s;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes wiggle {
+  0% {
+    -webkit-transform: translateX(0%);
+  }
+  15% {
+    -webkit-transform: translateX(-2%) rotate(-0.5deg);
+  }
+  30% {
+    -webkit-transform: translateX(2%) rotate(0.3deg);
+  }
+  45% {
+    -webkit-transform: translateX(-1%) rotate(-0.3deg);
+  }
+  60% {
+    -webkit-transform: translateX(1%) rotate(0.2deg);
+  }
+  75% {
+    -webkit-transform: translateX(-0.5%) rotate(-0.1deg);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
+main section:nth-of-type(2) section:first-of-type div:nth-of-type(2) {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+}
 main section:nth-of-type(2) section:first-of-type div:nth-of-type(2) img {
   margin: auto;
 }
-main section:nth-of-type(2) section:nth-of-type(2) div {
+main section:nth-of-type(2) section:first-of-type div:nth-of-type(2) img:nth-of-type(2) {
+  animation: blink 0.23s 2.3s;
+  animation-iteration-count: 4;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+main section:nth-of-type(2) section:nth-of-type(2) svg rect {
+  transition: all ease-in-out 2s;
+}
+main section:nth-of-type(2) section:nth-of-type(2) svg:hover rect:nth-of-type(odd) {
+  transform: translateX(-40px);
+}
+main section:nth-of-type(2) section:nth-of-type(2) svg:hover rect:nth-of-type(even) {
+  transform: translateX(40px);
+}
+main section:nth-of-type(2) section:nth-of-type(2) div:first-of-type {
   margin-bottom: 3em;
   transition: all 2s;
   transform: translateX(0);
@@ -113,4 +196,46 @@ main section:nth-of-type(2) section:nth-of-type(3) div:first-of-type {
 main section:nth-of-type(2) section:nth-of-type(3) div:nth-of-type(2) {
   background-color: #503232;
   height: 4em;
+}
+label {
+  background-color: green;
+  color: lawngreen;
+  font-size: 3em;
+  padding: 1rem 2rem;
+  position: absolute;
+  z-index: 99;
+}
+label:hover {
+  animation: 1s chevron-enter;
+}
+label:hover {
+  animation: 1s chevron-leave;
+}
+@keyframes chevron-enter {
+  0% {
+    -webkit-clip-path: polygon(-25% 0%, 0% 50%, -25% 100%, -100% 100%, -75% 50%, -100% 0%);
+            clip-path: polygon(-25% 0%, 0% 50%, -25% 100%, -100% 100%, -75% 50%, -100% 0%);
+  }
+  75% {
+    -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+            clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+  }
+  100% {
+    -webkit-clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
+            clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
+  }
+}
+@keyframes chevron-leave {
+  0% {
+    -webkit-clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
+            clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
+  }
+  25% {
+    -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+            clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+  }
+  100% {
+    -webkit-clip-path: polygon(175% 0%, 200% 50%, 175% 100%, 100% 100%, 125% 50%, 100% 0%);
+            clip-path: polygon(175% 0%, 200% 50%, 175% 100%, 100% 100%, 125% 50%, 100% 0%);
+  }
 }

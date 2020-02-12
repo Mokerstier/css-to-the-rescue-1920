@@ -8,7 +8,7 @@
   }
   main {
     transform: translateY(-2em);
-    transition: all 3s ease;
+    
     input:checked +  section > section:first-of-type > div{
         transform: translateX(-120vw);
         animation: moveBackground 5s;
@@ -16,7 +16,7 @@
     input:checked +  section > section:nth-child(2) > div{
         animation: moveTrain 6s;
      } 
-    input:checked +  section > section:nth-child(2) > div img{
+    input:checked +  section > section:nth-child(2) > div svg{
         animation: bump .2s 12 3s;
     }
     input:checked +  section > section:nth-child(3) > div{
@@ -34,20 +34,96 @@
             position: absolute;
             height: 50vh;
             display: flex;
-            div:nth-of-type(2){
+            aside{
+                background: linear-gradient(45deg, #00B1F5, rgba(0, 0,0, 0));
+                cursor: url(../img/spraycan-tilt.svg) 2 2, auto;
+                height: 118px;
+                position: absolute;
+                width: 145px;
+                mask-image: url(../img/CSSTOTHERESCUE.svg);
+
+            }
+            aside:hover{
+                animation: fill 3s;
+            }
+            // svg{
+            //     position: absolute;
+                
+            // }
+            // svg{
+            //     animation: fill 3s 1;
+            // }
+            @keyframes fill {
+                from{
+                    background: linear-gradient(45deg,  rgba(0, 0,0, 0));
+                }
+                to{
+                    backgrounde: linear-gradient(45deg, #00B1F5);
+                }
+            }
+            div:nth-of-type(2):hover{
+                animation: wiggle 3s infinite;
+                img:nth-of-type(2){
+                    animation: blink .2s infinite .3s;
+                }
+                @keyframes blink{
+                    0%{
+                        opacity: 0;
+                    }
+                    100%{
+                        opacity: 1;
+                    }
+                }
+            }
+            @keyframes wiggle {
+                0% { -webkit-transform: translateX(0%); }
+            15% { -webkit-transform: translateX(-2%) rotate(-.5deg); }
+            30% { -webkit-transform: translateX(2%) rotate(.3deg); }
+            45% { -webkit-transform: translateX(-1%) rotate(-.3deg); }
+            60% { -webkit-transform: translateX(1%) rotate(.2deg); }
+            75% { -webkit-transform: translateX(-.5%) rotate(-.1deg); }
+            100% { -webkit-transform: translateX(0%); }
+            }
+            div:nth-of-type(2){   
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                margin-left: 100px;   
                 img{
                     margin: auto;
                 }
+                img:nth-of-type(2){
+                    animation: blink .23s 2.3s;
+                    animation-iteration-count: 4;
+                }
+                @keyframes blink{
+                    0%{
+                        opacity: 0;
+                    }
+                    100%{
+                        opacity: 1;
+                    }
+                }
             }
         }
+        
         section:nth-of-type(2){
-            
-            div{
+            svg rect{
+                transition: all ease-in-out 2s;
+            }
+            svg:hover rect:nth-of-type(odd){
+                transform: translateX(-40px);
+            }
+            svg:hover rect:nth-of-type(even){
+                transform: translateX(40px);
+            }
+
+            div:first-of-type{
             margin-bottom: 3em;
             transition: all 2s;
             transform: translateX(0);
             
-            }  
+            } 
             @keyframes moveBackground{
                 from{
                     transform: translateX(0vw);
@@ -121,4 +197,26 @@
         } 
     }
   
+}
+label{
+    background-color: green;
+    color: lawngreen;
+    font-size: 3em;
+    padding:1rem 2rem;
+    position: absolute;
+    z-index: 99;
+}
+label:hover { animation: 1s chevron-enter; }
+label:hover { animation: 1s chevron-leave; }
+
+@keyframes chevron-enter {
+  0% { clip-path: polygon(-25% 0%, 0% 50%, -25% 100%, -100% 100%, -75% 50%, -100% 0%); }
+  75% { clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%); }
+  100% { clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%); }
+}
+
+@keyframes chevron-leave {
+  0% { clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%); }
+  25% { clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%); }
+  100% { clip-path: polygon(175% 0%, 200% 50%, 175% 100%, 100% 100%, 125% 50%, 100% 0%) }
 }
