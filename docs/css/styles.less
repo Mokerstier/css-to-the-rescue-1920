@@ -35,7 +35,7 @@
             height: 50vh;
             display: flex;
             aside{
-                background: linear-gradient(45deg, #00B1F5, rgba(0, 0,0, 0));
+                background-image: linear-gradient(to bottom right, #00B1F500 , rgba(0,0,0,0)) ;
                 cursor: url(../img/spraycan-tilt.svg) 2 2, auto;
                 height: 118px;
                 position: absolute;
@@ -44,22 +44,12 @@
 
             }
             aside:hover{
-                animation: fill 3s;
+                animation: fill 1.3s;
             }
-            // svg{
-            //     position: absolute;
-                
-            // }
-            // svg{
-            //     animation: fill 3s 1;
-            // }
             @keyframes fill {
-                from{
-                    background: linear-gradient(45deg,  rgba(0, 0,0, 0));
-                }
-                to{
-                    backgrounde: linear-gradient(45deg, #00B1F5);
-                }
+               100%{
+                   background-image: linear-gradient(to bottom right, #00B1F5 , #00B1F509);
+               }
             }
             div:nth-of-type(2):hover{
                 animation: wiggle 3s infinite;
@@ -106,24 +96,82 @@
                 }
             }
         }
-        
+        // train
         section:nth-of-type(2){
-            svg rect{
+            div div:first-of-type {
+
+                  
+                  input[type="checkbox"]:checked ~ svg path {
+                    stroke-dashoffset: 0;
+                    stroke: #fff;
+                    fill: none;
+                  }
+                  label{
+                    width: 65px;
+                    height: 160px;
+                    position: absolute;
+                    left: 0.5em; 
+                    top: 0;
+                    z-index: 9999;
+                  }  
+
+                svg:last-of-type { 
+                    width: 65px;
+                    height: 160px;
+                    position: absolute;
+                    left: 0.5em; 
+                    top: 0;
+                    background-color: rgb(99, 0, 0);  
+                    path{
+                        fill: none;
+                        transition: fill .1s linear 1s;
+                        transition: stroke-dashoffset 1s linear;
+                        
+                        // transition: fill 1s 1s ease;
+                    }                  
+                  }
+                  
+            }
+            input[type=radio]:first-of-type  {
+                position: absolute;
+                z-index: 999;
+            }
+            input[type=radio]:checked:first-of-type ~ div > div:nth-of-type(2) {
+                opacity: 1;
+            }
+            input[type=radio]:checked:nth-of-type(2) ~ div > div:nth-of-type(3) {
+                opacity: 1;
+            }
+            input[type=radio]:checked:nth-of-type(3) ~ div > div:nth-of-type(4) {
+                opacity: 1;
+            }
+            div:first-of-type{
+                position: relative;
+                
+            }
+            div div:first-of-type svg rect{
                 transition: all ease-in-out 2s;
             }
-            svg:hover rect:nth-of-type(odd){
+            div div:first-of-type svg:hover rect:nth-of-type(odd){
                 transform: translateX(-40px);
             }
-            svg:hover rect:nth-of-type(even){
+            div div:first-of-type svg:hover rect:nth-of-type(even){
                 transform: translateX(40px);
             }
 
-            div:first-of-type{
+            div div:first-of-type svg{
             margin-bottom: 3em;
-            transition: all 2s;
             transform: translateX(0);
             
             } 
+            div div:nth-of-type(2){
+                display: flex;
+                flex-direction: column;
+                opacity: 0;
+                position: absolute;
+                bottom: 25%;
+                left: 35%;
+            }
             @keyframes moveBackground{
                 from{
                     transform: translateX(0vw);
@@ -166,8 +214,11 @@
                  transform: translateX(10px);
              }
             }
+
         }
+        // FOREGROUND
         section:nth-of-type(3) {
+            font-family: 'Permanent Marker', cursive;
             position: absolute;
             left: 0;
             top: 80vh;
@@ -184,30 +235,38 @@
                 width: 90vw;
             }
             div:first-of-type{
-                transition: all 3s;
                 background-color: rgb(155, 168, 177);
                 height: 2em;
                 clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
             }
             div:nth-of-type(2){
+                display: flex;
                 background-color: rgb(80, 50, 50);
                 height: 4em;
                 
+            }
+
+            label{
+                background-color: #008938;
+                color: white;
+                padding: .5rem;
+                margin: .5rem;
             }
         } 
     }
   
 }
-label{
-    background-color: green;
-    color: lawngreen;
-    font-size: 3em;
-    padding:1rem 2rem;
-    position: absolute;
-    z-index: 99;
-}
-label:hover { animation: 1s chevron-enter; }
-label:hover { animation: 1s chevron-leave; }
+
+// label{
+//     background-color: green;
+//     color: lawngreen;
+//     font-size: 3em;
+//     padding:1rem 2rem;
+//     position: absolute;
+//     z-index: 99;
+// }
+// label:hover { animation: 1s chevron-enter; }
+// label:hover { animation: 1s chevron-leave; }
 
 @keyframes chevron-enter {
   0% { clip-path: polygon(-25% 0%, 0% 50%, -25% 100%, -100% 100%, -75% 50%, -100% 0%); }
