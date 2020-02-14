@@ -2,12 +2,10 @@
     margin: 0;
     padding: 0;
   }
-  header{
-      transform: translateY(-100%);
-      transition: all 3s ease;
+  body{
+      display: flex;
   }
   main {
-    transform: translateY(-2em);
     
     input:checked +  section > section:first-of-type > div{
         transform: translateX(-120vw);
@@ -25,14 +23,14 @@
      }
     section:nth-of-type(2) {
     width: 400vw;
-    height: 80vh;
+    height: auto;
     overflow: hidden;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
         section:first-of-type{
             align-items: flex-start;
-            position: absolute;
-            height: 50vh;
+            
+            height: 100%;
             display: flex;
             aside{
                 background-image: linear-gradient(to bottom right, #00B1F500 , rgba(0,0,0,0)) ;
@@ -86,31 +84,26 @@
                     animation: blink .23s 2.3s;
                     animation-iteration-count: 4;
                 }
-                @keyframes blink{
-                    0%{
-                        opacity: 0;
-                    }
-                    100%{
-                        opacity: 1;
-                    }
-                }
+
             }
         }
         // train
         section:nth-of-type(2){
+            position: absolute;
             div div:first-of-type {
 
                   
                   input[type="checkbox"]:checked ~ svg path {
-                    stroke-dashoffset: 0;
+                    stroke-dashoffset: 270;
                     stroke: #fff;
-                    fill: none;
+                    animation: outline 3s linear forwards;
                   }
                   label{
+                    cursor: url(../img/spraycan-tilt.svg) 2 2, auto;
                     width: 65px;
                     height: 160px;
                     position: absolute;
-                    left: 0.5em; 
+                    left: 4em; 
                     top: 0;
                     z-index: 9999;
                   }  
@@ -123,12 +116,20 @@
                     top: 0;
                     background-color: rgb(99, 0, 0);  
                     path{
-                        fill: none;
-                        transition: fill .1s linear 1s;
-                        transition: stroke-dashoffset 1s linear;
+                        fill: rgba(0,0,0,0);
+                        //transition: stroke-dashoffset 1s linear, fill 1s linear;
                         
-                        // transition: fill 1s 1s ease;
                     }                  
+                  }
+                  @keyframes outline {
+                    50%{
+                        fill: #ffffffcb;
+                        stroke-dashoffset: 50%;
+                    }
+                    100% {
+                        stroke-dashoffset: 0;
+                        fill: #ffffff;
+                    }
                   }
                   
             }
@@ -159,11 +160,7 @@
                 transform: translateX(40px);
             }
 
-            div div:first-of-type svg{
-            margin-bottom: 3em;
-            transform: translateX(0);
-            
-            } 
+
             div div:nth-of-type(2){
                 display: flex;
                 flex-direction: column;
@@ -257,25 +254,11 @@
   
 }
 
-// label{
-//     background-color: green;
-//     color: lawngreen;
-//     font-size: 3em;
-//     padding:1rem 2rem;
-//     position: absolute;
-//     z-index: 99;
-// }
-// label:hover { animation: 1s chevron-enter; }
-// label:hover { animation: 1s chevron-leave; }
-
-@keyframes chevron-enter {
-  0% { clip-path: polygon(-25% 0%, 0% 50%, -25% 100%, -100% 100%, -75% 50%, -100% 0%); }
-  75% { clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%); }
-  100% { clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%); }
-}
-
-@keyframes chevron-leave {
-  0% { clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%); }
-  25% { clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%); }
-  100% { clip-path: polygon(175% 0%, 200% 50%, 175% 100%, 100% 100%, 125% 50%, 100% 0%) }
+@keyframes blink{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
