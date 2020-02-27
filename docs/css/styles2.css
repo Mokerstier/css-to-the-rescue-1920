@@ -1,0 +1,91 @@
+:root {
+  --red: #630000;
+  --white: #fff;
+}
+body {
+  margin: 0;
+  background-image: url(../img/Background.svg);
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  width: auto;
+}
+section div div {
+  position: relative;
+}
+section div div div {
+  position: absolute;
+  top: 0;
+}
+section div div div input[type="checkbox"]:checked ~ svg path {
+  stroke-dashoffset: 270;
+  stroke: var(--white);
+  animation: outline 3s linear forwards;
+}
+section div div div label {
+  opacity: 0;
+  cursor: url(../img/spraycan-tilt.svg) 2 2, auto;
+  width: 65px;
+  height: 160px;
+  position: absolute;
+  left: 90px;
+  z-index: 99;
+}
+section div div div svg:last-of-type {
+  width: 65px;
+  height: 160px;
+  position: absolute;
+  left: 90px;
+  top: 0;
+  background-color: var(--red);
+}
+section div div div svg:last-of-type path {
+  fill: rgba(0, 0, 0, 0);
+}
+@keyframes outline {
+  50% {
+    fill: rgba(255, 255, 255, 0.479);
+    stroke-dashoffset: 50%;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #fff;
+  }
+}
+input {
+  visibility: hidden;
+}
+@media print and (orientation: landscape) {
+  section {
+    width: 100%;
+    height: 100%;
+  }
+  section svg {
+    width: 100%;
+    padding-bottom: 100%;
+  }
+  section div > div > div svg {
+    width: 100%;
+    padding-bottom: 100%;
+  }
+  section div > div > div svg path {
+    stroke: black;
+    fill: black !important;
+    display: block;
+    z-index: 999;
+    visibility: visible;
+    stroke-dashoffset: 270;
+    animation: none;
+  }
+  input[type="checkbox"][checked="checked"] + svg > path {
+    stroke: #fff;
+    fill: #fff;
+    display: block;
+    z-index: 999;
+    visibility: visible;
+  }
+}
