@@ -14,12 +14,19 @@ main {
   align-items: center;
   width: auto;
 }
+embed {
+  display: none ;
+  opacity: 0;
+}
 section div div {
   position: relative;
 }
 section div div div {
   position: absolute;
   top: 0;
+}
+section div div div input[type="checkbox"]:checked ~ embed {
+  display: block;
 }
 section div div div input[type="checkbox"]:checked ~ svg path {
   stroke-dashoffset: 270;
