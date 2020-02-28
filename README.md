@@ -43,3 +43,4 @@ MAGIC opera works!!
 - [x] Checkbox hack!
 - [x] Sound working!
 - [x] Print-style (sort of working)
+- [x] Reduced Motion
